@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+class Bensin{
+	public:	//mendekalrasian  nama yang bersifat public variabel yang di class
+		
+		Bensin();
+		void pilihan();  //variabel 
+		void hitung_uang();
+		void hitung_liter();
+	private://mendekalrasian  nama yang bersifat private variabel yang di gunakan 
+		float uang, liter, tampil;
+		string pil, ambil;
+		float harga, pertalite, pertamax;
+		string nama;
+};
+
+Bensin::Bensin(){  //mengdeklarasikan harga bahan bakar 
+	harga = 0;
+	pertalite = 7000;
+	pertamax = 9000;
+}
+
+void Bensin::pilihan(){  //pengdeklarasian pilihan menu daftar bahan bakar 
+	cout<<"==============================\n";
+	cout<<" Daftar Bahan Bakar dan Harga \n";
+	cout<<" - Pertalite    Rp.7,000     \n";
+	cout<<" - Pertamax     Rp.9,000     \n";
+	cout<<"==============================\n";
+	cout<<"Masukkan Nama anda : "; cin>>nama;
+	cout<<"Masukkan pilihan anda : "; cin>>ambil;
