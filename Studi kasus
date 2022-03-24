@@ -3,26 +3,26 @@
 using namespace std;
 
 class Bensin{
-	public:	//mendekalrasian  nama yang bersifat public variabel yang di class
+	public:	
 		
 		Bensin();
-		void pilihan();  //variabel 
+		void pilihan();   
 		void hitung_uang();
 		void hitung_liter();
-	private://mendekalrasian  nama yang bersifat private variabel yang di gunakan 
+	private:
 		float uang, liter, tampil;
 		string pil, ambil;
 		float harga, pertalite, pertamax;
 		string nama;
 };
 
-Bensin::Bensin(){  //mengdeklarasikan harga bahan bakar 
+Bensin::Bensin(){   
 	harga = 0;
 	pertalite = 7000;
 	pertamax = 9000;
 }
 
-void Bensin::pilihan(){  //pengdeklarasian pilihan menu daftar bahan bakar 
+void Bensin::pilihan(){  
 	cout<<"==============================\n";
 	cout<<" Daftar Bahan Bakar dan Harga \n";
 	cout<<" - Pertalite    Rp.7,000     \n";
@@ -61,16 +61,50 @@ void Bensin::hitung_uang(){
 	cout<<" 	   SPBU UAD \n";
 	cout<<"      SPBU KELOMPOK SAYA \n";
 	cout<<"    Jl.Jogja-Wonosari km 10 \n";
-	cout<<"___________ \n";
+	cout<<"_______________________________ \n";
 	cout<<" Nama Pelanggan	: "<<nama<<endl;
 	cout<<" Jenis Bensin	: "<<ambil<<endl;
 	cout<<" Total Liter	: "<<tampil<<" L"<<endl;
 	cout<<" Total Harga	: "<<"Rp."<<uang<<endl;
-	cout<<"___________ \n";
+	cout<<"_______________________________ \n";
 	cout<<" TERIMAKASIH  & SELAMAT JALAN \n";
 	cout<<" SEMOGA SELAMAT SAMPAI TUJUAN \n"; 
 	cout<<"--------------AAMIIN-------------\n";
 	system ("PAUSE");
 	system("cls");
 	pilihan();
+}
+void Bensin::hitung_liter(){
+	cout<<"masukkan jumlah liter : ";
+	cin>> liter;
+	if(ambil == "pertalite"){
+		harga = pertalite;
+	}else if (ambil == "pertamax"){
+		harga = pertamax;
+	}
+	tampil = harga * liter;
 	
+	cout<<endl<<endl;
+	cout<<" 	   SPBU UAD \n";
+	cout<<"      SPBU KELOMPOK SAYA \n";
+	cout<<"    Jl.Jogja-Wonosari km 10 \n";
+	cout<<"_______________________________ \n";
+	cout<<" Nama Pelanggan	: "<<nama<<endl;
+	cout<<" Jenis Bensin	: "<<ambil<<endl;
+	cout<<" Total Liter	: "<<liter<<" L"<<endl;
+	cout<<" Total Harga	: "<<" Rp."<<tampil<<endl;
+	cout<<"_______________________________ \n";
+	cout<<" TERIMAKASIH  & SELAMAT JALAN \n";
+	cout<<" SEMOGA SELAMAT SAMPAI TUJUAN \n"; 
+	cout<<"--------------AMIN-------------\n";
+	system("PAUSE");
+	system("cls");
+	pilihan();
+}
+int main()
+{
+	Bensin x;
+	x.pilihan();
+	system("PAUSE");
+	return 0;
+}
