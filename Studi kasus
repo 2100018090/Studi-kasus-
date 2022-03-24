@@ -30,3 +30,47 @@ void Bensin::pilihan(){  //pengdeklarasian pilihan menu daftar bahan bakar
 	cout<<"==============================\n";
 	cout<<"Masukkan Nama anda : "; cin>>nama;
 	cout<<"Masukkan pilihan anda : "; cin>>ambil;
+		if (ambil == "pertalite" || ambil == "pertamax"){
+		cout<<"==============================\n";
+		cout<<" Beli berdasarkan \n";
+		cout<<" - Uang\n";
+		cout<<" - Liter\n";
+		cout<<"==============================\n";
+		cout<<"Masukkan Pilihan Pembelian : "; cin>>pil;
+		if (pil == "uang"){
+			hitung_uang();
+		}else if (pil == "liter"){
+			hitung_liter();
+		}else {
+			system("cls");
+			pilihan();
+		}
+	}
+	system("cls");
+	pilihan();
+}
+void Bensin::hitung_uang(){
+		cout<<"masukkan besarnya uang : "; cin>> uang;
+		if(ambil == "pertalite"){
+			harga = pertalite;
+		}else if (ambil == "pertamax"){
+			harga = pertamax;
+		}
+	tampil = uang / harga;
+	cout<<endl<<endl;
+	cout<<" 	   SPBU UAD \n";
+	cout<<"      SPBU KELOMPOK SAYA \n";
+	cout<<"    Jl.Jogja-Wonosari km 10 \n";
+	cout<<"___________ \n";
+	cout<<" Nama Pelanggan	: "<<nama<<endl;
+	cout<<" Jenis Bensin	: "<<ambil<<endl;
+	cout<<" Total Liter	: "<<tampil<<" L"<<endl;
+	cout<<" Total Harga	: "<<"Rp."<<uang<<endl;
+	cout<<"___________ \n";
+	cout<<" TERIMAKASIH  & SELAMAT JALAN \n";
+	cout<<" SEMOGA SELAMAT SAMPAI TUJUAN \n"; 
+	cout<<"--------------AAMIIN-------------\n";
+	system ("PAUSE");
+	system("cls");
+	pilihan();
+	
